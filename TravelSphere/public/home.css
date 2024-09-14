@@ -1,0 +1,213 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1em;
+    position: relative;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #121212;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e0e0e0;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.profile-link {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5em 0;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#hero p {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#search-form {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+#search-form input {
+    padding: 0.5em;
+    width: 300px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+#search-form button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #e0e0e0;
+    color: #121212;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#search-form button:hover {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+#featured-destinations {
+    padding: 2em;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 70vw;
+    height: 60vh;
+    border-radius: 10px;
+}
+
+#special-offers {
+    padding: 2em;
+    text-align: center;
+}
+
+.destination, .offer {
+    margin: 1em 0;
+}
+
+#special-offers {
+    padding: 2em;
+    text-align: center;
+}
+
+.offers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.offer {
+    background-color: #1f1f1f;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 50vh;
+    text-align: left;
+    margin-left: 38%;
+}
+
+.offer:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.offer h3 {
+    margin-top: 0;
+    color: #e0e0e0;
+}
+
+.offer p {
+    color: #b0b0b0;
+}
+
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 1em 0;
+}

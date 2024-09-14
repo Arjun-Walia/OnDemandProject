@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Sphere - Destinations</title>
+    <link rel="stylesheet" href="destination.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="icon" href="images/logo (2).jpg">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="destination.html">Destinations</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <a href="profiles.html" class="profile-link">
+            <img src="images/pfp.jpg" alt="Profile" class="profile-icon">
+        </a>
+    </header>
+    <main>
+        <section id="destinations">
+            <h1>Explore Our Destinations</h1>
+            <div class="categories">
+                <h2>Categories</h2> 
+                <ul>
+                    <li><a href="#" onclick="filterDestinations('beaches')">Beaches</a></li>
+                    <li><a href="#" onclick="filterDestinations('mountains')">Mountains</a></li>
+                    <li><a href="#" onclick="filterDestinations('cities')">Cities</a></li>
+                    <li><a href="#" onclick="filterDestinations('historical')">Historical Sites</a></li>
+                </ul>
+            </div>
+            <div class="interactive-map">
+                <h2>Interactive Map</h2>
+                <div id="map" style="height: 400px;"></div>
+            </div>
+            <div class="destination-list">
+                <h2>All Destinations</h2>
+                <div class="destination-item">
+                    <img src="images/maldives.jpg" alt="Beach 1">
+                    <h3>Maldives</h3>
+                    <p>Beautiful beaches and crystal clear waters.</p>
+                    <a href="https://en.wikipedia.org/wiki/Maldives">Learn More</a>
+                </div>
+                <div class="destination-item">
+                    <img src="images/swissalps.jpg" alt="Mountain 1">
+                    <h3>Swiss Alps</h3>
+                    <p>Stunning mountain ranges and skiing resorts.</p>
+                    <a href="https://en.wikipedia.org/wiki/Swiss_Alps">Learn More</a>
+                </div>
+                <div class="destination-item">
+                    <img src="images/newyork.jpg" alt="City 1">
+                    <h3>New York City</h3>
+                    <p>The city that never sleeps.</p>
+                    <a href="https://en.wikipedia.org/wiki/New_York_(state)">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Travel Sphere. All rights reserved.</p>
+    </footer>
+    <script>
+        var map = L.map('map').setView([20.0, 0.0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var destinations = [
+            { name: "Maldives", coords: [3.2028, 73.2207], url: "https://en.wikipedia.org/wiki/Maldives", category: "beaches" },
+            { name: "Palm Cove", coords: [-25.2744, 133.7751], url: "https://en.wikipedia.org/wiki/Palm_Cove,_Queensland", category: "beaches" },
+            { name: "Phuket", coords: [7.8804,98.3923], url: "https://en.wikipedia.org/wiki/Palm_Cove,_Queensland", category: "beaches" },
+            { name: "Seychelles", coords: [-4.6581, 55.4915], url: "https://en.wikipedia.org/wiki/Seychelles", category: "beaches" },
+            { name: "Bora Bora", coords: [-16.5000, 151.7415], url: "https://en.wikipedia.org/wiki/Bora_Bora", category: "beaches" },
+            { name: "Mount Everest", coords: [27.9881, 86.9250], url: "https://en.wikipedia.org/wiki/Mount_Everest", category: "mountains" },
+            { name: "Swiss Alps", coords: [46.8182, 8.2275], url: "https://en.wikipedia.org/wiki/Swiss_Alps", category: "mountains" },
+            { name: "The Andes", coords: [-33.4489, -70.6693], url: "https://en.wikipedia.org/wiki/Andes", category: "mountains" },
+            { name: "Matterhorn", coords: [45.9763, 7.6586], url: "https://en.wikipedia.org/wiki/Matterhorn", category: "mountains" },
+            { name: "Mount Kilimanjaro", coords: [-3.0674, 37.3556], url: "https://en.wikipedia.org/wiki/Mount_Kilimanjaro", category: "mountains" },
+            { name: "New York City", coords: [40.7128, -74.0060], url: "https://en.wikipedia.org/wiki/New_York_(state)", category: "cities" },
+            { name: "Rome", coords: [41.9028, 12.4964], url: "https://en.wikipedia.org/wiki/Rome", category: "cities" },
+            { name: "Barcelona", coords: [41.3851, 2.1734], url: "https://en.wikipedia.org/wiki/Barcelona", category: "cities" },
+            { name: "Tokyo", coords: [35.6762, 139.6503], url: "https://en.wikipedia.org/wiki/Tokyo", category: "cities" },
+            { name: "Eiffel Tower", coords: [48.8575, 2.3514], url: "https://en.wikipedia.org/wiki/Paris", category: "historical" },
+            { name: "Taj Mahal", coords: [27.1751, 78.0421], url: "https://en.wikipedia.org/wiki/Taj_Mahal", category: "historical" },
+            { name: "Colosseum Rome", coords: [ 41.8902, 12.4922], url: "https://en.wikipedia.org/wiki/Colosseum", category: "historical" },
+            { name: "Great Wall of China", coords: [40.3584, 116.0204], url: "https://en.wikipedia.org/wiki/Great_Wall_of_China", category: "historical" },
+            { name: "Pyramids of Giza", coords: [29.9792, 31.1342], url: "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza", category: "historical" }
+        ];
+        var markers = [];
+        function filterDestinations(category) {
+            markers.forEach(function(marker) {
+                map.removeLayer(marker);
+            });
+            markers = [];
+            var filteredDestinations = destinations .filter(function(destination) {
+                return destination.category === category;
+            });
+            filteredDestinations.forEach(function(destination) {
+                var marker = L.marker(destination.coords).addTo(map)
+                    .bindPopup('<a href="' + destination.url + '">' + destination.name + '</a>');
+                markers.push(marker);
+            });
+        }
+        destinations.forEach(function(destination) {
+            var marker = L.marker(destination.coords).addTo(map)
+                .bindPopup('<a href="' + destination.url + '">' + destination.name + '</a>');
+            markers.push(marker);
+        });
+    </script>
+</body>
+</html>

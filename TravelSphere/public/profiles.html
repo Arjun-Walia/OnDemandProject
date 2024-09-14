@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Sphere - Profile</title>
+    <link rel="stylesheet" href="profiles.css">
+    <link rel="icon" href="images/logo (2).jpg">
+</head>
+<body>
+    <div id="profile">
+        <header>
+            <h1>Your Profile</h1>
+            <div>
+                <button onclick="logout()">Logout</button>
+                <button onclick="exitProfile()">Exit</button>
+            </div>
+        </header>
+        <section id="profile-info">
+            <img id="profile-pic" src="images/pfp.jpg" alt="Profile Picture">
+            <h2 id="username">Username</h2>
+            <p id="email">Email: user@example.com</p>
+        </section>
+        <section id="profile-actions">
+            <button onclick="editProfile()">Edit Profile</button>
+            <button onclick="changePassword()">Change Password</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

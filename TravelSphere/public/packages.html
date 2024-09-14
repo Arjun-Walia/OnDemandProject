@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Sphere - Packages</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="packages.css" />
+    <link rel="icon" href="images/logo (2).jpg" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <a href="profiles.html" class="profile-link">
+        <img src="images/pfp.jpg" alt="Profile" class="profile-icon" />
+      </a>
+    </header>
+    <div class="container">
+      <h1>Find the Best Packages</h1>
+      <form id="search-form">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search packages by location, budget, rating..."
+        />
+        <button type="submit">Search</button>
+      </form>
+      <h1>Our Packages</h1>
+      <div class="package">
+        <h2>Package 1</h2>
+        <p>
+          Discover the beauty of nature with Package 1. This package includes a
+          5-day stay at a cozy mountain lodge, daily hiking excursions, and
+          evening campfires. Perfect for adventure seekers and nature lovers.
+        </p>
+        <p>Price: $1000</p>
+        <button class="book-now">Book Now</button>
+      </div>
+      <div class="package">
+        <h2>Package 2</h2>
+        <p>
+          Immerse yourself in culture with Package 2. This package offers a
+          7-day stay in a historic city, guided tours of museums and landmarks,
+          and culinary experiences at local restaurants. Ideal for history buffs
+          and food enthusiasts.
+        </p>
+        <p>Price: $1500</p>
+        <button class="book-now">Book Now</button>
+      </div>
+      <div class="package">
+        <h2>Package 3</h2>
+        <p>
+          Experience the ultimate luxury with Package 3. This package includes a
+          7-day stay at a 5-star resort, daily gourmet meals, guided tours of
+          local attractions, and exclusive access to private beaches. Perfect
+          for those looking to unwind and indulge in the finer things in life.
+        </p>
+        <p>Price: $2000</p>
+        <button class="book-now">Book Now</button>
+      </div>
+      <div class="package">
+        <h2>Package 4</h2>
+        <p>
+          Enjoy a family-friendly vacation with Package 4. This package includes
+          a 5-day stay at a family resort, access to theme parks, and daily
+          activities for kids and adults. Great for families looking to create
+          lasting memories together.
+        </p>
+        <p>Price: $2500</p>
+        <button class="book-now">Book Now</button>
+      </div>
+      <div class="package">
+        <h2>Package 5</h2>
+        <p>
+          Embark on a romantic getaway with Package 5. This package offers a
+          4-day stay at a charming bed and breakfast, couples' spa treatments,
+          and candlelit dinners. Perfect for couples looking to rekindle their
+          romance.
+        </p>
+        <p>Price: $3000</p>
+        <button class="book-now">Book Now</button>
+      </div>
+      <div class="package">
+        <h2>Package 6</h2>
+        <p>
+          Dive into adventure with Package 6. This package includes a 6-day stay
+          at a beachfront hotel, daily scuba diving lessons, and guided
+          underwater tours. Ideal for thrill-seekers and water sports
+          enthusiasts.
+        </p>
+        <p>Price: $3500</p>
+        <button class="book-now">Book Now</button>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 Travel Sphere. All rights reserved.</p>
+    </footer>
+    <script>
+      document
+        .getElementById("search-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+
+          const query = document
+            .getElementById("search-input")
+            .value.toLowerCase();
+          const packages = document.querySelectorAll(".package");
+
+          packages.forEach((pkg) => {
+            const packageName = pkg
+              .querySelector("h2")
+              .textContent.toLowerCase();
+            const packageDescription = pkg
+              .querySelector("p")
+              .textContent.toLowerCase();
+            const packagePrice = pkg
+              .querySelector("p:nth-of-type(2)")
+              .textContent.toLowerCase();
+
+            if (
+              packageName.includes(query) ||
+              packageDescription.includes(query) ||
+              packagePrice.includes(query)
+            ) {
+              pkg.style.display = "block";
+            } else {
+              pkg.style.display = "none";
+            }
+          });
+        });
+      // Add event listeners to all "Book Now" buttons
+      const bookNowButtons = document.querySelectorAll(".book-now");
+      bookNowButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          alert(
+            "Booking process initiated for " +
+              this.parentElement.querySelector("h2").textContent
+          );
+        });
+      });
+    </script>
+    <script src="package.js"></script>
+  </body>
+</html>

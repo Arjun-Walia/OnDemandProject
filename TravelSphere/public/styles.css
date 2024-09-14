@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url(images/hero.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth {
+    width: 100%;
+    max-width: 400px;
+    padding: 50px 30px;
+    background: rgba(51, 51, 51, 0.8); /* Adjust the alpha value to control transparency */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    text-align: center;
+}
+
+input,
+button {
+    display: block;
+    width: 28vw;
+    margin: 10px auto;
+    padding: 15px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+input:active{
+    border: none;
+}
+button {
+    width: 30vw;
+    background: #007bff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

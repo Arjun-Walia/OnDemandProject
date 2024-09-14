@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Arjun",
+      "password": "p2j22qjql",
+      "email": "arjunwalia957@gmail.com"
+    },
+    {
+      "id": 2,
+      "username": "Unknown",
+      "password": "0anonymous0",
+      "email": "UnknownUser@gmail.com"
+    },
+    {
+      "id": 3,
+      "username": "Ichigo",
+      "password": "$2b$10$RyOirHk0eLpPsNDSIXIfCuMd4Zky91iAdQn81JqNkJHwhTviChEcW",
+      "email": "IchigoKurosaki@soulsociety.com"
+    },
+    {
+      "id": 4,
+      "username": "Arjun",
+      "password": "$2b$10$EP7/HVGZfpLAUjrN6W6ixObRnNRZDWYYy3l604vf1lp9jEI2YgE5y",
+      "email": "arjunwalia957@gmail.com"
+    },
+    {
+      "id": 5,
+      "username": "Unknown",
+      "password": "$2b$10$uMwBQDMGR0cExoIwlAQvzOMb/fVQZ7ebYNL5J3OmqWLUJlSbgF21u",
+      "email": "unknown@user.com"
+    }
+  ],
+  "jwtconfig": {
+    "secretKey": "JNS93#NDM1",
+    "expiresIn": "1h"
+  }
+}
